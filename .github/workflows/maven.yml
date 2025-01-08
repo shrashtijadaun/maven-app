@@ -29,15 +29,18 @@ jobs:
         cache: maven
 
     - name: Cleaning Project
-      run: mvn -B clean --file pom.xml
+      run: mvn clean
 
-    - name: Building Project
-      run: mvn -B build --file pom.xml
+    - name: Validating Project
+      run: mvn validate
 
     - name: Testing Project
       run: mvn test
 
-    - name: Packaing Project
+    - name: Compiling Project
+      run: mvn compile
+
+    - name: Building Artifact
       run: mvn package
 
       
